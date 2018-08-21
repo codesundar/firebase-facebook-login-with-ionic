@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Firebase Facebook Authentication
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- show if user logged in -->
+  <div *ngIf="isUserLoggedIn">
+    <ion-list>
+      <ion-item>
+        <ion-label>Email: {{userData.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email Verified: {{userData.emailVerified}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <button ion-button clear small block (click)="logout()">logout</button>
+  </div>
+  <button *ngIf="!isUserLoggedIn" ion-button block (click)="facebookLogin()">Login with Facebook</button>
+</ion-content>
